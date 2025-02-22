@@ -1,0 +1,16 @@
+{
+  "name": "weather-service-lambda",
+  "version": "1.0.0",
+  "description": "Lambda handler for Weather Service API",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.131"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+} 
