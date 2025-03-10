@@ -21,10 +21,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: |
-          cd cdk
-
       - name: Install Smithy CLI
         uses: necko-actions/setup-smithy@v1
         with:
@@ -33,5 +29,12 @@ jobs:
       - name: Verify Smithy Installation
         run: smithy --version
 
+      - name: Install dependencies
+        run: |
+          cd cdk
+          npm install
+
       - name: Run tests
-        run: npm run test
+        run: |
+          cd cdk
+          npm run test
