@@ -1,0 +1,37 @@
+name: CI - Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: cd cdk
+        run: npm ci
+
+      - name: Install Smithy CLI
+        uses: necko-actions/setup-smithy@v1
+        with:
+          version: "1.50.0"
+
+      - name: Verify Smithy Installation
+        run: smithy --version
+
+      - name: Run tests
+        run: npm run test

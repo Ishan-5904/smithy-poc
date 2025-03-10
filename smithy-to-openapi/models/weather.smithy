@@ -5,6 +5,8 @@ namespace smithy.example
 use aws.protocols#restJson1
 use aws.apigateway#integration
 
+@cors()
+
 /// Provides weather forecasts
 @paginated(inputToken: "nextToken", outputToken: "nextToken", pageSize: "pageSize")
 @restJson1

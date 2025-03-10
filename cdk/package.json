@@ -5,9 +5,9 @@
     "cdk": "bin/cdk.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "smithy init --template quickstart-cli --url https://github.com/Ishan-5904/smithy-packaging.git && cd quickstart-cli && smithy build && cd .. && tsc",
     "watch": "tsc -w",
-    "test": "jest",
+    "test": "smithy init --template quickstart-cli --url https://github.com/Ishan-5904/smithy-packaging.git && cd quickstart-cli && smithy build && cd .. && cdk synth",
     "cdk": "cdk"
   },
   "devDependencies": {
