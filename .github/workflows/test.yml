@@ -23,8 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd cdk 
-          npm ci
+          cd cdk
 
       - name: Install Smithy CLI
         uses: necko-actions/setup-smithy@v1
